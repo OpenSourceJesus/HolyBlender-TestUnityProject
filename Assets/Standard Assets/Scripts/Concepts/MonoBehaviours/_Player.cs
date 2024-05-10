@@ -45,7 +45,6 @@ namespace FightRoom
 			if (shootTimer <= 0.0f && Mouse.current.leftButton.isPressed)
 			{
 				shootTimer += 1.0f / reloadSpeed;
-				// Instantiate(bulletPrefab, transform.position, transform.rotation);
 			}
 		}
 	}
