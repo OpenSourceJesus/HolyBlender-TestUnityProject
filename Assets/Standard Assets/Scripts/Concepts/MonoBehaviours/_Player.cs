@@ -7,7 +7,6 @@ namespace FightRoom
 	{
 		public float moveSpeed = 5.0f;
 		public float reloadSpeed = 0.0f;
-		// public Bullet bulletPrefab;
 		float shootTimer = 0.0f;
 
 		void Start ()
@@ -38,9 +37,10 @@ namespace FightRoom
 			position += move * moveSpeed * Time.deltaTime;
 			transform.position = position;
 			Vector3 mousePosition = Mouse.current.position.ReadValue();
+			mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 			Vector3 facing = mousePosition - position;
-			transform.eulerAngles = Vector3.forward * Mathf.Atan2(facing.y, facing.x) * 57.2958f;
-			if (shootTimer > 0)
+			transform.eulerAngles = Vector3.forward * (Mathf.Atan2(facing.y, facing.x) * 57.2958f - 90.0f);
+			if (shootTimer > 0.0f)
 				shootTimer -= Time.deltaTime;
 			if (shootTimer <= 0.0f && Mouse.current.leftButton.isPressed)
 			{

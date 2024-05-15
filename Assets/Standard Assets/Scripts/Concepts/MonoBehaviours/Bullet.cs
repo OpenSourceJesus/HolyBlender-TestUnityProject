@@ -4,7 +4,7 @@ namespace FightRoom
 {
 	public class Bullet : MonoBehaviour
 	{
-		public float moveSpeed = 5;
+		public float moveSpeed = 5.0f;
 		// public Transform trs;
 	
 		void Update ()
