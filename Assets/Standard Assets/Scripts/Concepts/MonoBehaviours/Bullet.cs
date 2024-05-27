@@ -9,7 +9,7 @@ namespace FightRoom
 	
 		void Update ()
 		{
-			// transform.position = transform.position + transform.up * moveSpeed * Time.deltaTime;
+			transform.position = transform.position + transform.up * moveSpeed * Time.deltaTime;
 		}
 	}
 }

@@ -7,6 +7,7 @@ namespace FightRoom
 	{
 		public float moveSpeed = 5.0f;
 		public float reloadSpeed = 0.0f;
+		public Bullet bulletPrefab;
 		float shootTimer = 0.0f;
 
 		void Start ()
@@ -44,6 +45,7 @@ namespace FightRoom
 				shootTimer -= Time.deltaTime;
 			if (shootTimer <= 0.0f && Mouse.current.leftButton.isPressed)
 			{
+				Instantiate(bulletPrefab, transform.position, transform.rotation);
 				shootTimer += 1.0f / reloadSpeed;
 			}
 		}
